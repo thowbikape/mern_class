@@ -1,0 +1,63 @@
+ body {
+    font-family: Arial, sans-serif;
+    background-color: #f2f2f2;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+}
+
+.context {
+    max-width: 800px;
+    margin: 30px auto;
+    padding: 0 20px;
+    text-align: center;
+}
+
+.context h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.context p {
+    font-size: 16px;
+    color: #444;
+}
+
+.movie-container {
+    text-align: center;
+    margin: 30px auto;
+}
+
+.movie-card {
+    display: inline-block;
+    width: 220px;
+    margin: 15px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    vertical-align: top;
+    padding: 10px;
+}
+
+.movie-card img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+}
+
+.movie-card h2 {
+    font-size: 16px;
+    margin: 10px 0 5px;
+}
+
+.movie-card p {
+    font-size: 13px;
+    color: #444;
+    text-align: left;
+}
