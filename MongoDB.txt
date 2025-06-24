@@ -1,0 +1,422 @@
+use kec
+switched to db kec
+db.createCollection("User")
+{ ok: 1 }
+db.User.insertOne( {  Name:"Thowbika",
+email:"thowbikape.23eie@kongu.edu",
+age:"19",
+dep:"EIE"})
+{
+  acknowledged: true,
+  insertedId: ObjectId('685a268d353c9638eb70dc97')
+}
+db.User.insertMany([
+  {name:"y",email:}])
+SyntaxError: Unexpected token (2:18)
+
+[0m [90m 1 |[39m db[33m.[39m[33mUser[39m[33m.[39minsertMany([
+[31m[1m>[22m[39m[90m 2 |[39m   {name[33m:[39m[32m"y"[39m[33m,[39memail[33m:[39m}])
+ [90m   |[39m                   [31m[1m^[22m[39m[0m
+db.User.insertMany([
+  {name:"y",email:"y@gmail.com",dep:"EIE"}])
+{
+  acknowledged: true,
+  insertedIds: {
+    '0': ObjectId('685a2ba3353c9638eb70dc98')
+  }
+}
+db.User.insertMany([
+  {name:"z",email:"z@gmail.com",dep:"EIE"}])
+{
+  acknowledged: true,
+  insertedIds: {
+    '0': ObjectId('685a2bc0353c9638eb70dc99')
+  }
+}
+db.User.insertMany([
+  {name:"kabi",email:"kabi@gmail.com",gender:"female",dep:"EIE"}
+])
+{
+  acknowledged: true,
+  insertedIds: {
+    '0': ObjectId('685a2d68353c9638eb70dc9a')
+  }
+}
+db.User.insertMany([
+  {name:"d",email:"d@gmail.com",gender:"female",dep:"EIE"}
+])
+{
+  acknowledged: true,
+  insertedIds: {
+    '0': ObjectId('685a2d7f353c9638eb70dc9b')
+  }
+}
+db.User.insertMany([
+  {name:"w",email:"w@gmail.com",gender:"female",age:"20",dep:"EIE"}
+])
+{
+  acknowledged: true,
+  insertedIds: {
+    '0': ObjectId('685a2dae353c9638eb70dc9c')
+  }
+}
+db.User.insertMany([
+  {name:"s",email:"s@gmail.com",gender:"male",age:"20",dep:"EIE"}
+])
+{
+  acknowledged: true,
+  insertedIds: {
+    '0': ObjectId('685a2dcf353c9638eb70dc9d')
+  }
+}
+db.User.insertMany([
+  {name:"k",email:"k@gmail.com",gender:"male",age:"24",dep:"EIE"}
+])
+{
+  acknowledged: true,
+  insertedIds: {
+    '0': ObjectId('685a2e02353c9638eb70dc9e')
+  }
+}
+db.User.find()
+{
+  _id: ObjectId('685a268d353c9638eb70dc97'),
+  Name: 'Thowbika',
+  email: 'thowbikape.23eie@kongu.edu',
+  age: '19',
+  dep: 'EIE'
+}
+{
+  _id: ObjectId('685a2ba3353c9638eb70dc98'),
+  name: 'y',
+  email: 'y@gmail.com',
+  dep: 'EIE'
+}
+{
+  _id: ObjectId('685a2bc0353c9638eb70dc99'),
+  name: 'z',
+  email: 'z@gmail.com',
+  dep: 'EIE'
+}
+{
+  _id: ObjectId('685a2d68353c9638eb70dc9a'),
+  name: 'kabi',
+  email: 'kabi@gmail.com',
+  gender: 'female',
+  dep: 'EIE'
+}
+{
+  _id: ObjectId('685a2d7f353c9638eb70dc9b'),
+  name: 'd',
+  email: 'd@gmail.com',
+  gender: 'female',
+  dep: 'EIE'
+}
+{
+  _id: ObjectId('685a2dae353c9638eb70dc9c'),
+  name: 'w',
+  email: 'w@gmail.com',
+  gender: 'female',
+  age: '20',
+  dep: 'EIE'
+}
+{
+  _id: ObjectId('685a2dcf353c9638eb70dc9d'),
+  name: 's',
+  email: 's@gmail.com',
+  gender: 'male',
+  age: '20',
+  dep: 'EIE'
+}
+{
+  _id: ObjectId('685a2e02353c9638eb70dc9e'),
+  name: 'k',
+  email: 'k@gmail.com',
+  gender: 'male',
+  age: '24',
+  dep: 'EIE'
+}
+db.User.findOne()
+{
+  _id: ObjectId('685a268d353c9638eb70dc97'),
+  Name: 'Thowbika',
+  email: 'thowbikape.23eie@kongu.edu',
+  age: '19',
+  dep: 'EIE'
+}
+dp.user.find({name:"k"})
+ReferenceError: dp is not defined
+dp.User.find({name:"k"})
+ReferenceError: dp is not defined
+db.User.find({name:"k"})
+{
+  _id: ObjectId('685a2e02353c9638eb70dc9e'),
+  name: 'k',
+  email: 'k@gmail.com',
+  gender: 'male',
+  age: '24',
+  dep: 'EIE'
+}
+db.User.updateOne({name:"k",{$set:{age:"22"}}})
+SyntaxError: Unexpected token (1:28)
+
+[0m[31m[1m>[22m[39m[90m 1 |[39m db[33m.[39m[33mUser[39m[33m.[39mupdateOne({name[33m:[39m[32m"k"[39m[33m,[39m{$set[33m:[39m{age[33m:[39m[32m"22"[39m}}})
+ [90m   |[39m                             [31m[1m^[22m[39m[0m
+db.User.updateOne({name:"k"},{$set:{age:"22"}})
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 1,
+  modifiedCount: 1,
+  upsertedCount: 0
+}
+db.User.find({name:"k"})
+{
+  _id: ObjectId('685a2e02353c9638eb70dc9e'),
+  name: 'k',
+  email: 'k@gmail.com',
+  gender: 'male',
+  age: '22',
+  dep: 'EIE'
+}
+db.User.updateOne({name:"s"},{$set:{name:"sas"}})
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 1,
+  modifiedCount: 1,
+  upsertedCount: 0
+}
+db.User.find({name:"sas"})
+{
+  _id: ObjectId('685a2dcf353c9638eb70dc9d'),
+  name: 'sas',
+  email: 's@gmail.com',
+  gender: 'male',
+  age: '20',
+  dep: 'EIE'
+}
+db.User.updateOne({name:"w"},{$set:{email:"abcd@gmail.com"}})
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 1,
+  modifiedCount: 1,
+  upsertedCount: 0
+}
+db.User.find({name:"w"})
+{
+  _id: ObjectId('685a2dae353c9638eb70dc9c'),
+  name: 'w',
+  email: 'abcd@gmail.com',
+  gender: 'female',
+  age: '20',
+  dep: 'EIE'
+}
+db.User.updateMany({},{$set:{phone:""}})
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 8,
+  modifiedCount: 8,
+  upsertedCount: 0
+}
+db.User.find({name:"k"})
+{
+  _id: ObjectId('685a2e02353c9638eb70dc9e'),
+  name: 'k',
+  email: 'k@gmail.com',
+  gender: 'male',
+  age: '22',
+  dep: 'EIE',
+  phone: ''
+}
+db.User.find({phone:""})
+{
+  _id: ObjectId('685a268d353c9638eb70dc97'),
+  Name: 'Thowbika',
+  email: 'thowbikape.23eie@kongu.edu',
+  age: '19',
+  dep: 'EIE',
+  phone: ''
+}
+{
+  _id: ObjectId('685a2ba3353c9638eb70dc98'),
+  name: 'y',
+  email: 'y@gmail.com',
+  dep: 'EIE',
+  phone: ''
+}
+{
+  _id: ObjectId('685a2bc0353c9638eb70dc99'),
+  name: 'z',
+  email: 'z@gmail.com',
+  dep: 'EIE',
+  phone: ''
+}
+{
+  _id: ObjectId('685a2d68353c9638eb70dc9a'),
+  name: 'kabi',
+  email: 'kabi@gmail.com',
+  gender: 'female',
+  dep: 'EIE',
+  phone: ''
+}
+{
+  _id: ObjectId('685a2d7f353c9638eb70dc9b'),
+  name: 'd',
+  email: 'd@gmail.com',
+  gender: 'female',
+  dep: 'EIE',
+  phone: ''
+}
+{
+  _id: ObjectId('685a2dae353c9638eb70dc9c'),
+  name: 'w',
+  email: 'abcd@gmail.com',
+  gender: 'female',
+  age: '20',
+  dep: 'EIE',
+  phone: ''
+}
+{
+  _id: ObjectId('685a2dcf353c9638eb70dc9d'),
+  name: 'sas',
+  email: 's@gmail.com',
+  gender: 'male',
+  age: '20',
+  dep: 'EIE',
+  phone: ''
+}
+{
+  _id: ObjectId('685a2e02353c9638eb70dc9e'),
+  name: 'k',
+  email: 'k@gmail.com',
+  gender: 'male',
+  age: '22',
+  dep: 'EIE',
+  phone: ''
+}
+dp.User.deleteOne({name:"k"})
+ReferenceError: dp is not defined
+db.User.deleteOne({name:"k"})
+{
+  acknowledged: true,
+  deletedCount: 1
+}
+db.User.find()
+{
+  _id: ObjectId('685a268d353c9638eb70dc97'),
+  Name: 'Thowbika',
+  email: 'thowbikape.23eie@kongu.edu',
+  age: '19',
+  dep: 'EIE',
+  phone: ''
+}
+{
+  _id: ObjectId('685a2ba3353c9638eb70dc98'),
+  name: 'y',
+  email: 'y@gmail.com',
+  dep: 'EIE',
+  phone: ''
+}
+{
+  _id: ObjectId('685a2bc0353c9638eb70dc99'),
+  name: 'z',
+  email: 'z@gmail.com',
+  dep: 'EIE',
+  phone: ''
+}
+{
+  _id: ObjectId('685a2d68353c9638eb70dc9a'),
+  name: 'kabi',
+  email: 'kabi@gmail.com',
+  gender: 'female',
+  dep: 'EIE',
+  phone: ''
+}
+{
+  _id: ObjectId('685a2d7f353c9638eb70dc9b'),
+  name: 'd',
+  email: 'd@gmail.com',
+  gender: 'female',
+  dep: 'EIE',
+  phone: ''
+}
+{
+  _id: ObjectId('685a2dae353c9638eb70dc9c'),
+  name: 'w',
+  email: 'abcd@gmail.com',
+  gender: 'female',
+  age: '20',
+  dep: 'EIE',
+  phone: ''
+}
+{
+  _id: ObjectId('685a2dcf353c9638eb70dc9d'),
+  name: 'sas',
+  email: 's@gmail.com',
+  gender: 'male',
+  age: '20',
+  dep: 'EIE',
+  phone: ''
+}
+db.User.find().sort({name:1})
+{
+  _id: ObjectId('685a268d353c9638eb70dc97'),
+  Name: 'Thowbika',
+  email: 'thowbikape.23eie@kongu.edu',
+  age: '19',
+  dep: 'EIE',
+  phone: ''
+}
+{
+  _id: ObjectId('685a2d7f353c9638eb70dc9b'),
+  name: 'd',
+  email: 'd@gmail.com',
+  gender: 'female',
+  dep: 'EIE',
+  phone: ''
+}
+{
+  _id: ObjectId('685a2d68353c9638eb70dc9a'),
+  name: 'kabi',
+  email: 'kabi@gmail.com',
+  gender: 'female',
+  dep: 'EIE',
+  phone: ''
+}
+{
+  _id: ObjectId('685a2dcf353c9638eb70dc9d'),
+  name: 'sas',
+  email: 's@gmail.com',
+  gender: 'male',
+  age: '20',
+  dep: 'EIE',
+  phone: ''
+}
+{
+  _id: ObjectId('685a2dae353c9638eb70dc9c'),
+  name: 'w',
+  email: 'abcd@gmail.com',
+  gender: 'female',
+  age: '20',
+  dep: 'EIE',
+  phone: ''
+}
+{
+  _id: ObjectId('685a2ba3353c9638eb70dc98'),
+  name: 'y',
+  email: 'y@gmail.com',
+  dep: 'EIE',
+  phone: ''
+}
+{
+  _id: ObjectId('685a2bc0353c9638eb70dc99'),
+  name: 'z',
+  email: 'z@gmail.com',
+  dep: 'EIE',
+  phone: ''
+}
+kec
+
